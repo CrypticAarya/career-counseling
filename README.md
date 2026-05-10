@@ -1,81 +1,169 @@
-# CampusDirect: The Future of College Selection 🎓
-### *An Investment Pitch for the Next Generation of Higher Education Guidance*
+# Find Your Campus 🎓
+### *Student-driven college discovery & mentorship platform.*
 
-![Vision Banner](https://images.unsplash.com/photo-1523050335102-c32509142279?auto=format&fit=crop&q=80&w=1200&h=400)
-
----
-
-## 🚀 The Vision
-To democratize access to authentic college insights, empowering every student to make data-driven, peer-verified decisions about their future.
+[![Status](https://img.shields.io/badge/Status-MVP_Live-success?style=flat-square)](http://localhost:5174)
+[![Tech Stack](https://img.shields.io/badge/Stack-React_|_Node_|_MongoDB-blue?style=flat-square)](#tech-stack)
 
 ---
 
-## 📉 The Problem (The Pain)
-*Every year, millions of students make life-altering decisions based on:*
-- **Glorified Brochures**: Marketing materials that hide the ground reality.
-- **Biased Rankings**: Non-transparent metrics that don't reflect student experience.
-- **Information Gap**: No direct way to talk to seniors before paying admission fees.
-- **The Result**: High dropout rates, career misalignment, and wasted potential.
+## 🚀 Overview
+Choosing a college is one of the most expensive and life-altering decisions a student makes, yet it is often based on biased marketing and third-party rankings. **Find Your Campus** is an early-stage startup focused on bringing radical transparency to this process. We connect aspirants directly with verified college seniors for honest, ground-level insights that you simply won't find in a brochure.
 
 ---
 
-## 💡 The Solution (The Cure)
-**CampusDirect** is a peer-to-peer mentorship platform that connects aspirants directly with verified seniors at their target campuses.
-- ✅ **Ground-Level Truth**: Real talk about placements, culture, and hostel life.
-- ✅ **Verified Mentors**: Only students with verified IDs can consult.
-- ✅ **Scalable Mentorship**: Micro-transactions (₹99) make guidance accessible to all.
+## 📉 The Problem (Why we built this)
+Current college selection is broken. Students are navigating a minefield of:
+*   **Fake Counseling**: Paid agents with hidden commissions to push low-tier institutes.
+*   **Marketing Noise**: Glorified brochures that hide the "dark side" of placements and campus culture.
+*   **Information Gap**: No easy way to talk to a real student currently studying at the target campus.
+*   **Hostel/Culture Realities**: Hidden costs, strict curfews, and toxic coding environments are only discovered *after* paying the fees.
+
+---
+
+## 💡 The Solution
+We provide a **Peer-to-Peer Mentorship Platform**. By connecting aspirants with seniors through micro-sessions (₹99), we ensure that information flows directly from those who know best. No filters, no commissions—just the ground reality.
+
+---
+
+## ✨ MVP Features
+*   **Mentorship Booking**: Streamlined lead collection and session scheduling.
+*   **WhatsApp Onboarding**: Manual but high-touch onboarding flow for direct user feedback.
+*   **Premium College Previews**: Curated cards showing placement reality and culture scores.
+*   **Payment Confirmation Flow**: Simplified manual payment verification to validate willingness-to-pay.
+*   **Responsive UI**: Optimized for mobile, as that's where our primary demographic (students) lives.
+
+---
+
+## 🧠 MVP Strategy
+We are following a **"Validate First, Build Later"** approach:
+*   **Fast Execution**: Built the core value proposition in days, not months.
+*   **Manual Onboarding**: Intentionally using WhatsApp for scheduling to talk to our first 100 users and understand their pain points.
+*   **Avoiding Overengineering**: No complex auth or heavy dashboards yet. The focus is purely on the connection between aspirant and mentor.
+*   **Zero-Waste Scaling**: We only build features that our users explicitly ask for during their initial calls.
 
 ---
 
 ## 🖥️ Product Showcase
-*Built with a premium minimalist aesthetic to inspire trust and clarity.*
+*A glimpse into the premium, student-first user experience.*
 
-| **Aspirant Landing** | **Student Dashboard** |
+| **Aspirant Landing** | **Problem Identification** |
 |:---:|:---:|
-| ![Landing](https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600&h=400) | ![Dashboard](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600&h=400) |
-| *High-conversion lead capture* | *Track applications & bookings* |
+| ![Hero Section](./screenshots/s1.png) | ![Problem Section](./screenshots/s2.png) |
+| *Hero & Trust Building* | *Awareness of the Pain* |
+
+| **College Insights** | **Mentorship Booking** |
+|:---:|:---:|
+| ![College Cards](./screenshots/s3.png) | ![Mentorship Form](./screenshots/s4.png) |
+| *Direct Campus Realities* | *Frictionless Registration* |
+
+| **Mobile Experience** |
+|:---:|
+| ![Mobile UI](./screenshots/s5.png) |
+| *Optimized for the Student Demographic* |
 
 ---
 
-## 💰 Business Model
-**Micro-Mentorship (₹99/Session)**
-- **Aspirant Pays**: Low friction entry point for premium guidance.
-- **Mentor Earns**: Incentivizing seniors to share authentic experiences.
-- **Platform Fee**: Sustainable commission-based revenue model.
+## 🛠️ Tech Stack
 
-**Growth Levers**:
-- Partnerships with schools and coaching institutes.
-- Premium "College Roadmap" packages.
-- Alumni networking for job placements.
+### Frontend
+*   **React 19**: Component-based architecture for scalability.
+*   **Vite**: For lightning-fast development and optimized builds.
+*   **Tailwind CSS**: Utility-first styling for a custom, premium aesthetic.
+*   **Framer Motion**: Smooth micro-animations to enhance user engagement.
 
----
+### Backend & Data
+*   **Node.js & Express**: Lightweight and scalable API layer.
+*   **MongoDB**: Flexible document storage for leads and mentor profiles.
+*   **Supabase/Google Sheets**: (Planned) For rapid data iteration in early testing.
 
-## 🛠️ Technology Stack
-*Engineered for speed, security, and scale.*
-- **Frontend**: React 19 + Framer Motion (Premium UI/UX)
-- **Backend**: Node.js + Express (Scalable API)
-- **Database**: MongoDB (Flexible Document Storage)
-- **Security**: JWT Authentication + Helmet Security
+### Deployment
+*   **Vite/Vercel**: Optimized frontend hosting.
+*   **Render/Railway**: Reliable backend service deployment.
 
 ---
 
-## 📈 Roadmap (The Future)
-- [x] **Phase 1**: MVP with Lead Collection & Auth.
-- [x] **Phase 2**: Peer Mentorship Booking (₹99 flow).
-- [ ] **Phase 3**: AI-Powered College Recommendation Engine.
-- [ ] **Phase 4**: PAN-India Expansion & Institutional Tie-ups.
-
----
-
-## 📂 Clean Architecture
+## 📂 Project Structure
 ```text
-├── backend/            # API Core (Node/Express)
-├── frontend/           # Presentation Layer (React/Vite)
-└── docs/               # Strategy & Roadmaps
+├── frontend/           # Presentation layer (Vite + React)
+│   ├── src/
+│   │   ├── components/ # Reusable UI components
+│   │   ├── pages/      # Route-level components
+│   │   └── hooks/      # Custom React logic
+├── backend/            # API Core (Node + Express)
+│   ├── models/         # Database schemas
+│   ├── controllers/    # Business logic
+│   └── routes/         # API endpoints
+├── screenshots/        # Product visuals for documentation
+└── README.md           # The Startup Vision
 ```
 
 ---
 
-**CampusDirect is not just a platform; it's a movement to bring transparency to education.** 🚀
+## 🚦 Getting Started
 
-*For investment inquiries, please contact the founder.*
+### 1. Clone the repository
+```bash
+git clone https://github.com/CrypticAarya/career-counseling.git
+cd career-counseling
+```
+
+### 2. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### 3. Backend Setup
+```bash
+cd backend
+npm install
+# Ensure you have your MONGO_URI in a .env file
+npm start
+```
+
+---
+
+## 🎯 Current MVP Scope
+The architecture is **intentionally simple**. We’ve avoided distributed systems and complex microservices to ensure we can pivot fast. The current focus is on **Lead Quality** and **Session Completion Rates**.
+
+---
+
+## 📈 Future Roadmap
+*   **Mentor Dashboard**: Automated session management for seniors.
+*   **AI Recommendation Engine**: Match students with colleges based on their CET/JEE percentiles and branch interests.
+*   **Institutional Webinars**: Live campus tours and Q&A sessions.
+*   **College Comparison Engine**: Side-by-side technical and cultural comparisons.
+*   **Student Communities**: Campus-specific Discord/WhatsApp groups for niche interests.
+
+---
+
+## 📈 Growth Strategy
+*   **Viral Content**: Student-led Instagram Reels showing "Expectation vs Reality" of campus life.
+*   **Community Infiltration**: Active presence in JEE/CET Telegram and WhatsApp groups.
+*   **Micro-Influencers**: Partnering with college students who already have a following on campus.
+*   **Referral Loop**: Discounted sessions for students who bring their friends.
+
+---
+
+## 🔭 Vision
+Our mission is to become the **Trust Layer** of higher education. We want to ensure that no student ever feels "trapped" in a college they wouldn't have chosen if they knew the truth. We are building the Yelp/Glassdoor for the Indian education system.
+
+---
+
+## 🤝 Contributing
+We are currently in private beta. If you are a student or developer who wants to fix education, feel free to open an issue or reach out.
+
+---
+
+## 📧 Contact
+**Founder**: [Your Name/Handle]
+**Email**: campus@findyourcampus.com
+**Twitter**: [@FindYourCampus]
+
+---
+
+## 💬 Final Note
+This project started with a simple observation: students were being lied to. We are building **Find Your Campus** not just as a business, but as a solution we wish we had when we were 18. It’s about more than just colleges; it’s about making sure the next generation of engineers, doctors, and artists start their journey on the right foot.
+
+**Let's bring the truth back to education.** 🚀
