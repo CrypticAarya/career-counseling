@@ -20,7 +20,8 @@ export const LeadCollection = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:5001/api/leads/submit', {
+      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+      const response = await fetch(`${baseUrl}/leads/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +44,8 @@ export const LeadCollection = () => {
 
   const handlePaymentConfirm = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/leads/payment-confirm', {
+      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+      const response = await fetch(`${baseUrl}/leads/payment-confirm`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
