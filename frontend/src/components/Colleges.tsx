@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Star, Zap, Home, Coffee } from 'lucide-react';
+import { Star, Zap, Home } from 'lucide-react';
 
 export const Colleges = () => {
   const colleges = [

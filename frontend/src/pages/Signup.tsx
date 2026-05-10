@@ -14,13 +14,13 @@ export const Signup = () => {
   const { register } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await register(formData);
       toast.success('Account created successfully!');
       navigate('/dashboard');
-    } catch (err) {
+    } catch (err: any) {
       toast.error(err.response?.data?.message || 'Registration failed');
     }
   };

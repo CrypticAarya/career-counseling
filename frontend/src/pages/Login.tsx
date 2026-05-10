@@ -10,14 +10,14 @@ export const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await login(email, password);
       toast.success('Welcome back!');
       navigate('/dashboard');
-    } catch (err) {
-      toast.error('Invalid credentials');
+    } catch (err: any) {
+      toast.error(err.response?.data?.message || 'Invalid credentials');
     }
   };
 
