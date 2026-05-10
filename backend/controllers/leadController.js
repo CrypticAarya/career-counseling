@@ -1,23 +1,27 @@
-// In a real MVP, you might use Supabase or MongoDB here.
-// For now, let's just log and return success to keep it moving.
+const Lead = require('../models/Lead');
 
 exports.submitLead = async (req, res) => {
   try {
-    const { name, phone, email, percentile, colleges, branch } = req.body;
+    const { name, phone, email, percentile, colleges, branch, doubts } = req.body;
 
-    // Simple validation
     if (!name || !phone || !email) {
       return res.status(400).json({ success: false, message: 'Missing required fields' });
     }
 
-    console.log('New Lead Received:', { name, phone, email, percentile, colleges, branch });
+    const lead = await Lead.create({
+      name,
+      phone,
+      email,
+      percentile,
+      colleges,
+      branch,
+      doubts
+    });
 
-    // TODO: Store in DB
-    
     res.status(201).json({
       success: true,
       message: 'Lead submitted successfully',
-      data: { name, email }
+      data: lead
     });
   } catch (error) {
     console.error('Error in submitLead:', error);
@@ -29,8 +33,7 @@ exports.bookMentorship = async (req, res) => {
   try {
     const { leadId, collegeId, mentorshipType } = req.body;
     
-    console.log('Mentorship Booking:', { leadId, collegeId, mentorshipType });
-    
+    // In a real app, you'd link this to the lead
     res.status(200).json({
       success: true,
       message: 'Mentorship session initiated',
@@ -43,13 +46,18 @@ exports.bookMentorship = async (req, res) => {
 
 exports.confirmPayment = async (req, res) => {
   try {
-    const { transactionId, screenshotUrl } = req.body;
+    const { transactionId, email } = req.body;
     
-    console.log('Payment Confirmation Received:', { transactionId });
+    // Find the latest lead by email and update payment status
+    const lead = await Lead.findOneAndUpdate(
+      { email },
+      { isPaid: true, paymentStatus: 'completed', transactionId },
+      { new: true, sort: { createdAt: -1 } }
+    );
     
     res.status(200).json({
       success: true,
-      message: 'Payment received. Redirecting to WhatsApp...',
+      message: 'Payment received. Our team will contact you shortly.',
       whatsappLink: 'https://wa.me/91XXXXXXXXXX'
     });
   } catch (error) {

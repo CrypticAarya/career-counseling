@@ -15,6 +15,14 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleBookClick = () => {
+    if (window.location.pathname === '/') {
+      document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#book';
+    }
+  };
+
   const navLinks = [
     { name: 'Features', href: '#features' },
     { name: 'Colleges', href: '#colleges' },
@@ -57,6 +65,7 @@ export const Navbar = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleBookClick}
             className="px-6 py-2.5 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-dark transition-all shadow-lg shadow-primary/20"
           >
             Book Session
@@ -91,7 +100,10 @@ export const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <button className="w-full py-4 rounded-xl bg-primary text-white font-bold text-lg shadow-xl shadow-primary/20">
+            <button 
+              onClick={handleBookClick}
+              className="w-full py-4 rounded-xl bg-primary text-white font-bold text-lg shadow-xl shadow-primary/20"
+            >
               Book Session
             </button>
           </motion.div>

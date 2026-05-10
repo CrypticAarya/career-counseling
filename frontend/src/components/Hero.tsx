@@ -29,10 +29,16 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="btn-primary-premium shadow-xl shadow-primary/30 w-full sm:w-auto">
+            <button 
+              onClick={() => document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn-primary-premium shadow-xl shadow-primary/30 w-full sm:w-auto"
+            >
               Book ₹99 Mentorship
             </button>
-            <button className="btn-secondary-premium w-full sm:w-auto">
+            <button 
+              onClick={() => document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn-secondary-premium w-full sm:w-auto"
+            >
               Free Guidance
             </button>
           </div>

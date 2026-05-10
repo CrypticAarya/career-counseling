@@ -48,7 +48,10 @@ export const LeadCollection = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ transactionId: 'manual_payment' }),
+        body: JSON.stringify({ 
+          transactionId: 'manual_payment_' + Date.now(),
+          email: formData.email 
+        }),
       });
 
       if (response.ok) {

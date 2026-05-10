@@ -18,7 +18,12 @@ export const Mentors = () => {
               <div>
                 <h3 className="font-bold text-xl">Mentor Name</h3>
                 <p className="text-accent-stone">Software Engineer @ Google</p>
-                <button className="mt-4 text-primary font-bold text-sm underline">Book Session</button>
+                <button 
+                  onClick={() => window.location.href = '/#book'}
+                  className="mt-4 text-primary font-bold text-sm underline"
+                >
+                  Book Session
+                </button>
               </div>
             </div>
           ))}
