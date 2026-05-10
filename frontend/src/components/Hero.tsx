@@ -29,18 +29,22 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button 
-              onClick={() => document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-primary-premium shadow-xl shadow-primary/30 w-full sm:w-auto"
+            <a
+              href="https://topmate.io/yakshit_savaliya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary-premium shadow-xl shadow-primary/30 w-full sm:w-auto text-center inline-flex items-center justify-center"
             >
               Book ₹99 Mentorship
-            </button>
-            <button 
-              onClick={() => document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-secondary-premium w-full sm:w-auto"
+            </a>
+            <a
+              href="https://topmate.io/yakshit_savaliya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary-premium w-full sm:w-auto text-center inline-flex items-center justify-center"
             >
               Free Guidance
-            </button>
+            </a>
           </div>
         </motion.div>
 

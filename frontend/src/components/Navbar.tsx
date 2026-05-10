@@ -16,11 +16,7 @@ export const Navbar = () => {
   }, []);
 
   const handleBookClick = () => {
-    if (window.location.pathname === '/') {
-      document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = '/#book';
-    }
+    window.open('https://topmate.io/yakshit_savaliya', '_blank');
   };
 
   const navLinks = [

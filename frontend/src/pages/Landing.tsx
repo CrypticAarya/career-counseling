@@ -3,6 +3,7 @@ import { Problems } from '../components/Problems';
 import { Colleges } from '../components/Colleges';
 import { Stats } from '../components/Stats';
 import { HowItWorks } from '../components/HowItWorks';
+import { Testimonials } from '../components/Testimonials';
 import { LeadCollection } from '../components/LeadCollection';
 
 export const Landing = () => {
@@ -13,6 +14,7 @@ export const Landing = () => {
       <Problems />
       <Colleges />
       <HowItWorks />
+      <Testimonials />
       <LeadCollection />
     </>
   );
