@@ -45,7 +45,7 @@ export const Hero = () => {
               onClick={goToTopmate}
               className="btn-secondary-premium w-full sm:w-auto text-center inline-flex items-center justify-center"
             >
-              Free Guidance
+              Book Webinar
             </button>
           </div>
         </motion.div>
@@ -69,8 +69,8 @@ export const Hero = () => {
                    <div className="w-full h-full bg-gradient-to-br from-secondary to-secondary-dark" />
                 </div>
                 <div>
-                  <h4 className="text-lg md:text-xl font-bold text-primary">Rahul Sharma</h4>
-                  <p className="text-xs md:text-sm text-accent-stone">SDE Intern @ Microsoft • VIT Pune '24</p>
+                  <h4 className="text-lg md:text-xl font-bold text-primary">Sarthak Ghoderao</h4>
+                  <p className="text-xs md:text-sm text-accent-stone">Student • NST ADYPU</p>
                 </div>
               </div>
               <div className="flex gap-1 mb-3 md:mb-4">
@@ -83,19 +83,6 @@ export const Hero = () => {
               </p>
             </motion.div>
 
-            {/* Placement Stat Card */}
-            <motion.div
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="premium-card p-6 md:p-10 w-full max-w-[340px] shadow-2xl shadow-secondary/5 lg:self-start self-center"
-            >
-              <h4 className="text-[10px] md:text-sm font-bold mb-3 md:mb-4 tracking-[0.2em] text-accent-stone uppercase">Avg Placement '24</h4>
-              <p className="text-4xl md:text-6xl font-extrabold text-primary mb-4 md:mb-6 leading-none tracking-tighter">₹12.5 LPA</p>
-              <div className="flex justify-between items-center pt-4 md:pt-6 border-t border-[#e8e1d5]">
-                <span className="text-[10px] md:text-xs font-bold text-accent-stone tracking-widest uppercase">MIT WPU</span>
-                <span className="text-[10px] md:text-xs font-bold text-accent-stone tracking-widest uppercase">Computer Science</span>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

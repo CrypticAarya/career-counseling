@@ -2,16 +2,15 @@ import { motion } from 'framer-motion';
 
 export const Stats = () => {
   const stats = [
-    { label: 'Students Guided', value: '500+' },
-    { label: 'Colleges Covered', value: '50+' },
-    { label: 'Student Mentors', value: '100+' },
-    { label: 'Student Satisfaction', value: '98%' },
+    { label: 'Students Guided', value: '20+' },
+    { label: 'Colleges Covered', value: '7+' },
+    { label: 'Student Mentors', value: '15+' },
   ];
 
   return (
     <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
