@@ -11,6 +11,7 @@ import { Dashboard } from './pages/Dashboard';
 import { CareerFlow } from './pages/CareerFlow';
 import { Mentors } from './pages/Mentors';
 import { CollegePage } from './pages/CollegePage';
+import { MentorProfile } from './pages/MentorProfile';
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const { user, loading } = useAuth();
@@ -40,6 +41,8 @@ function App() {
             } />
             <Route path="/mentors" element={<Mentors />} />
             <Route path="/college/:id" element={<CollegePage />} />
+            <Route path="/mentor/*" element={<MentorProfile />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Layout>
       </Router>

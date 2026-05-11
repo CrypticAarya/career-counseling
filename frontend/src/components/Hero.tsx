@@ -2,6 +2,12 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 export const Hero = () => {
+  const topmateUrl = 'https://topmate.io/yakshit_savaliya';
+
+  const goToTopmate = () => {
+    window.location.assign(topmateUrl);
+  };
+
   return (
     <section className="relative pt-24 md:pt-32 pb-20 px-6 min-h-screen flex items-center overflow-hidden">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -29,22 +35,18 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a
-              href="https://topmate.io/yakshit_savaliya"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={goToTopmate}
               className="btn-primary-premium shadow-xl shadow-primary/30 w-full sm:w-auto text-center inline-flex items-center justify-center"
             >
               Book ₹99 Mentorship
-            </a>
-            <a
-              href="https://topmate.io/yakshit_savaliya"
-              target="_blank"
-              rel="noopener noreferrer"
+            </button>
+            <button
+              onClick={goToTopmate}
               className="btn-secondary-premium w-full sm:w-auto text-center inline-flex items-center justify-center"
             >
               Free Guidance
-            </a>
+            </button>
           </div>
         </motion.div>
 

@@ -1,49 +1,10 @@
 import { motion } from 'framer-motion';
 import { Star, Zap, Home } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { colleges } from '../data/mentors';
 
 export const Colleges = () => {
-  const colleges = [
-    {
-      name: "VIT Pune",
-      placement: 4.8,
-      culture: "Intense Coding",
-      vibe: "Academic",
-      hostel: "Average",
-      tags: ["High Packages", "Strict Attendance"]
-    },
-    {
-      name: "COEP Pune",
-      placement: 4.9,
-      culture: "Peer-led",
-      vibe: "Historic",
-      hostel: "Standard",
-      tags: ["Legacy", "Elite Networking"]
-    },
-    {
-      name: "MIT-WPU",
-      placement: 4.2,
-      culture: "Startup-focused",
-      vibe: "Lively",
-      hostel: "Premium",
-      tags: ["Great Events", "Expensive"]
-    },
-    {
-      name: "PCCOE",
-      placement: 4.5,
-      culture: "Discipline",
-      vibe: "Focused",
-      hostel: "Good",
-      tags: ["Mass Recruiters", "Placement Cell"]
-    },
-    {
-      name: "DY Patil",
-      placement: 4.0,
-      culture: "Relaxed",
-      vibe: "Social",
-      hostel: "Modern",
-      tags: ["Good Infrastructure", "Campus Life"]
-    }
-  ];
+  const navigate = useNavigate();
 
   return (
     <section id="colleges" className="py-32 px-6">
@@ -61,12 +22,13 @@ export const Colleges = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {colleges.map((college, idx) => (
             <motion.div
-              key={idx}
+              key={college.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="premium-card p-10 group relative overflow-hidden"
+              className="premium-card p-10 group relative overflow-hidden cursor-pointer"
+              onClick={() => navigate(`/college/${college.id}`)}
             >
               <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Star className="w-32 h-32 fill-primary" />
@@ -79,28 +41,26 @@ export const Colleges = () => {
                   <span className="text-accent-stone font-bold text-xs uppercase tracking-widest flex items-center gap-3">
                     <Zap className="w-5 h-5 text-primary" /> Placements
                   </span>
-                  <span className="text-lg font-black text-primary">{college.placement}/5.0</span>
+                  <span className="text-lg font-black text-primary">Mentor Verified</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-accent-stone font-bold text-xs uppercase tracking-widest flex items-center gap-3">
                     <Star className="w-5 h-5 text-primary" /> Culture
                   </span>
-                  <span className="text-lg font-black text-primary">{college.culture}</span>
+                  <span className="text-lg font-black text-primary">Student Stories</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-accent-stone font-bold text-xs uppercase tracking-widest flex items-center gap-3">
                     <Home className="w-5 h-5 text-primary" /> Hostel
                   </span>
-                  <span className="text-lg font-black text-primary">{college.hostel}</span>
+                  <span className="text-lg font-black text-primary">Raw Insights</span>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {college.tags.map(tag => (
-                  <span key={tag} className="text-xs font-bold px-4 py-2 rounded-full bg-[#fcfaf7] border border-[#e8e1d5] text-accent-stone">
-                    {tag}
-                  </span>
-                ))}
+                <span className="text-xs font-bold px-4 py-2 rounded-full bg-[#fcfaf7] border border-[#e8e1d5] text-accent-stone">
+                  Click to view mentors
+                </span>
               </div>
             </motion.div>
           ))}

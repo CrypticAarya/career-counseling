@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,8 +17,12 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname, location.hash]);
+
   const handleBookClick = () => {
-    window.open('https://topmate.io/yakshit_savaliya', '_blank');
+    window.location.assign('https://topmate.io/yakshit_savaliya');
   };
 
   const navLinks = [
@@ -84,7 +90,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-[#e8e1d5] px-6 py-8 flex flex-col gap-6 shadow-2xl"
+            className="md:hidden absolute top-full left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-[#e8e1d5] px-6 py-8 flex flex-col gap-6 shadow-2xl"
           >
             {navLinks.map((link) => (
               <a
