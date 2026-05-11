@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export const Stats = () => {
   const stats = [
-    { label: 'Students Guided', value: '500+' },
+    { label: 'Students Guided', value: '50+' },
     { label: 'Colleges Covered', value: '20+' },
     { label: 'Student Mentors', value: '15+' },
   ];
