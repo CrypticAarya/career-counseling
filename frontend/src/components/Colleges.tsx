@@ -14,9 +14,6 @@ export const Colleges = () => {
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-primary tracking-tight">Featured Colleges</h2>
             <p className="text-xl text-accent-stone font-medium">Get specific insights for these top institutes.</p>
           </div>
-          <button className="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all duration-300 bg-white px-8 py-4 rounded-full border border-[#e8e1d5] shadow-sm hover:shadow-md">
-            View All 50+ Colleges <Zap className="w-5 h-5 fill-primary" />
-          </button>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
